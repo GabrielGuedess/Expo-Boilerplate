@@ -6,7 +6,7 @@ exports[`<Main /> should render the heading 1`] = `
     [
       {
         "alignItems": "center",
-        "backgroundColor": "#fff",
+        "backgroundColor": "#000",
         "flexBasis": 0,
         "flexGrow": 1,
         "flexShrink": 1,
@@ -18,7 +18,9 @@ exports[`<Main /> should render the heading 1`] = `
   <Text
     style={
       [
-        {},
+        {
+          "color": "#fff",
+        },
       ]
     }
   >
