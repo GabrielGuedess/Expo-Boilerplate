@@ -42,6 +42,10 @@ yarn-error.log
 
 # Bundle artifacts
 *.jsbundle
+tsconfig.tsbuildinfo
+
+# Coverage
+coverage
 
 # CocoaPods
 /ios/Pods/
