@@ -11,6 +11,11 @@
       "eas": {
         "projectId": "9820666e-91e5-465e-af4e-735d5c02a0c7"
       }
-    }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/9820666e-91e5-465e-af4e-735d5c02a0c7"
+    },
+    "android": {},
+    "ios": {}
   }
 }
