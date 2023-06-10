@@ -12,10 +12,6 @@
 
 ## Preview
 
-| Desktop    |
-| ---------- |
-| screenshot |
-
 | Mobile     |
 | ---------- |
 | screenshot |

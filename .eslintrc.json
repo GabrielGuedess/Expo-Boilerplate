@@ -80,6 +80,45 @@
       }
     },
     {
+      "files": ["**/utils/tests/**", "jest.config.ts"],
+      "rules": {
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "variable",
+            "format": ["camelCase", "UPPER_CASE"]
+          },
+          {
+            "selector": "variable",
+            "types": ["function"],
+            "format": ["PascalCase", "camelCase"]
+          },
+          {
+            "selector": "typeAlias",
+            "format": ["PascalCase"],
+            "custom": {
+              "regex": "[A-Z]*Props$",
+              "match": true
+            }
+          },
+          {
+            "selector": "interface",
+            "format": ["PascalCase"],
+            "custom": {
+              "regex": "^I[A-Z]",
+              "match": true
+            }
+          },
+          {
+            "selector": "variable",
+            "types": ["boolean"],
+            "format": ["PascalCase"],
+            "prefix": ["is", "should", "has", "can", "did", "will"]
+          }
+        ]
+      }
+    },
+    {
       "files": ["spec.ts", "spec.tsx", "test.ts", "test.tsx"],
       "rules": {
         "unicorn/prefer-module": "off",
@@ -91,6 +130,7 @@
       "rules": {
         "@typescript-eslint/naming-convention": "off",
         "@typescript-eslint/no-empty-interface": "off",
+        "@typescript-eslint/consistent-type-definitions": "off",
         "unicorn/filename-case": ["error", { "case": "kebabCase" }]
       }
     },
@@ -135,14 +175,15 @@
     "sort-imports": "off",
     "unicorn/no-null": "off",
     "react/jsx-no-undef": "off",
-    "no-use-before-define":"off",
-    "react/style-prop-object":"off",
+    "no-use-before-define": "off",
+    "react/style-prop-object": "off",
     "node/no-missing-import": "off",
     "node/no-unpublished-import": "off",
     "react/jsx-props-no-spreading": "off",
     "import/prefer-default-export": "off",
     "arrow-body-style": ["error", "as-needed"],
     "import/no-duplicates": ["error", { "prefer-inline": true }],
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
     "import/consistent-type-specifier-style": ["error", "prefer-inline"],
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "@typescript-eslint/consistent-type-imports": [
@@ -177,8 +218,35 @@
         }
       }
     ],
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "*", "next": "return" },
+      { "blankLine": "always", "prev": "*", "next": "try" },
+      { "blankLine": "always", "prev": "try", "next": "*" },
+      { "blankLine": "always", "prev": "*", "next": "block-like" },
+      { "blankLine": "always", "prev": "block-like", "next": "*" },
+      { "blankLine": "always", "prev": "*", "next": "throw" },
+      { "blankLine": "always", "prev": "var", "next": "*" }
+    ],
     "@typescript-eslint/naming-convention": [
       "error",
+      {
+        "selector": "variable",
+        "format": ["camelCase", "UPPER_CASE"]
+      },
+      {
+        "selector": "variable",
+        "types": ["function"],
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": "typeAlias",
+        "format": ["PascalCase"],
+        "custom": {
+          "regex": "[A-Z]*Props$",
+          "match": true
+        }
+      },
       {
         "selector": "interface",
         "format": ["PascalCase"],
@@ -188,12 +256,10 @@
         }
       },
       {
-        "selector": "typeAlias",
+        "selector": "variable",
+        "types": ["boolean"],
         "format": ["PascalCase"],
-        "custom": {
-          "regex": "[A-Z]*Props$",
-          "match": true
-        }
+        "prefix": ["is", "should", "has", "can", "did", "will"]
       }
     ],
     "react/function-component-definition": [
@@ -243,7 +309,9 @@
           "/^constants/",
           "/^storage/",
           "/^styles/",
-          ["parent", "sibling", "index"]
+          ["parent", "sibling", "index"],
+          "/./types/",
+          "/./styles/"
         ],
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
