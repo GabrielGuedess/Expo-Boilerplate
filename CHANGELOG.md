@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/GabrielGuedess/Expo-Boilerplate/compare/v1.0.0...v1.0.1) (2023-06-11)
+
+
+### Bug Fixes
+
+* detox config ([1a2ffc1](https://github.com/GabrielGuedess/Expo-Boilerplate/commit/1a2ffc145e0964f8d143f6be49926964443b8f05))
+
 # 1.0.0 (2023-06-10)
 
 
