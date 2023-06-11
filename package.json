@@ -19,8 +19,8 @@
     "start": "expo start --dev-client",
     "test": "jest --maxWorkers=50% -u",
     "test:ci": "jest --runInBand -u",
-    "test:e2e": "jest --config ./e2e/jest.config.js",
-    "test:e2e:ci": "jest --runInBand --config ./e2e/jest.config.js",
+    "test:e2e": "detox test -c android.emu.debug",
+    "test:e2e:ci": "jest --runInBand --config ./e2e/jest.config.ts",
     "test:watch": "jest --watch --maxWorkers=25%",
     "typecheck": "tsc --noEmit",
     "web": "expo start --web"
