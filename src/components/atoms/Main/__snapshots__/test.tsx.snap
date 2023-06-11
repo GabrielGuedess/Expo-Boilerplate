@@ -23,6 +23,7 @@ exports[`<Main /> should render the heading 1`] = `
         },
       ]
     }
+    testID="main"
   >
     Main
   </Text>

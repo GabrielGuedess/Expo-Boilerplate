@@ -34,6 +34,7 @@ exports[`<Home /> should render the home correctly 1`] = `
           },
         ]
       }
+      testID="main"
     >
       Main
     </Text>
